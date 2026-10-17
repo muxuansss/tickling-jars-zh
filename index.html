@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>挠痒性癖瓶</title>
+    <meta name="description" content="选择喜欢的颜色，用瓶中的液体表示你对各项挠痒玩法的喜好，再生成一张专属图片。">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="top">
+            <h1>挠痒性癖瓶</h1>
+            <p>选择颜色，拖动滑块，装满你的偏好。</p>
+        </header>
+
+        <section class="panel">
+            <h2><label for="name">昵称</label></h2>
+            <input type="text" id="name" maxlength="20" autocomplete="off" placeholder="请输入昵称">
+        </section>
+
+        <section class="panel">
+            <h2>液体颜色</h2>
+            <div class="picker">
+                <div class="picker-main">
+                    <label class="field-label">色相
+                        <input type="range" id="hue" min="0" max="360" step="1">
+                    </label>
+                    <div class="tones" id="tones" role="group" aria-label="明暗"></div>
+                </div>
+                <div class="preview-jars" aria-hidden="true">
+                    <canvas id="pv1"></canvas><canvas id="pv2"></canvas><canvas id="pv3"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2 id="roleLabel">角色偏好</h2>
+            <div class="roles" id="roles" role="group" aria-labelledby="roleLabel"></div>
+        </section>
+
+        <section class="panel">
+            <h2>兴趣偏好</h2>
+            <p class="hint">从“没兴趣”到“特别喜欢”，共有五档；瓶中的液体会随之变化。</p>
+            <div class="items" id="items"></div>
+        </section>
+
+        <section class="actions">
+            <button class="big" id="generate" type="button">生成图片</button>
+            <p id="generationError" role="alert" hidden>图片生成失败，请重试，或使用其他浏览器。</p>
+        </section>
+
+        <section class="panel result" id="result" hidden>
+            <img id="resultImg" alt="生成的挠痒性癖瓶图片">
+            <p class="hint">手机上也可以长按图片保存。</p>
+            <a class="big" id="download" href="#" download>保存图片</a>
+        </section>
+    </div>
+
+    <footer class="site-footer">
+        <p>原作：
+            <a href="https://x.com/ray_tkl" target="_blank" rel="noopener">れー(@ray_tkl)</a>
+        </p>
+        <p>参考：
+            <a href="https://adampointyboots.github.io/kink-jars-tickling/" target="_blank" rel="noopener">Tickling Kink Jars</a> /
+            <a href="https://seiheki-bin.com/" target="_blank" rel="noopener">性癖瓶工厂</a><br>
+        </p>
+        <p>简体中文汉化版 · <a href="https://ray-tkl.github.io/tickling-jars/" target="_blank" rel="noopener">日文原版</a></p>
+        <p>填写内容仅保存在当前浏览器中。</p>
+    </footer>
+    <noscript>
+        <p class="noscript">请启用 JavaScript 后使用本页面。</p>
+    </noscript>
+    <script src="jars.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
